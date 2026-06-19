@@ -1,0 +1,346 @@
+{
+  "niche": "Debris Removal Contractor Insurance",
+  "domain": "debrisremovalinsurance.com",
+  "researched": "2026-06-19",
+  "data_source": "DataForSEO (Google Ads search volume + DataForSEO Labs keyword suggestions)",
+  "primary_keywords": [
+    {
+      "keyword": "commercial dump truck insurance",
+      "volume": 2900,
+      "cpc": 73.39,
+      "difficulty": "medium",
+      "competition": "MEDIUM",
+      "intent": "commercial",
+      "notes": "Highest volume in niche; core coverage type for debris haulers"
+    },
+    {
+      "keyword": "dump truck insurance",
+      "volume": 1300,
+      "cpc": 63.46,
+      "difficulty": "medium",
+      "competition": "HIGH",
+      "intent": "commercial",
+      "notes": "Broad match; strong transactional intent"
+    },
+    {
+      "keyword": "insurance for junk removal business",
+      "volume": 260,
+      "cpc": 70.30,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "High CPC signals strong buyer intent; low competition is opportunity"
+    },
+    {
+      "keyword": "junk removal business insurance",
+      "volume": 260,
+      "cpc": 70.30,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Exact variant of above; target both on same page"
+    },
+    {
+      "keyword": "dump truck insurance quotes",
+      "volume": 320,
+      "cpc": 44.06,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "transactional",
+      "notes": "Bottom-funnel; user ready to buy"
+    },
+    {
+      "keyword": "junk removal insurance",
+      "volume": 170,
+      "cpc": 65.09,
+      "difficulty": "low",
+      "competition": "MEDIUM",
+      "intent": "commercial",
+      "notes": "Core seed term; strong CPC"
+    },
+    {
+      "keyword": "dump truck insurance cost",
+      "volume": 210,
+      "cpc": 26.53,
+      "difficulty": "medium",
+      "competition": "MEDIUM",
+      "intent": "informational",
+      "notes": "Great blog/FAQ target; drives awareness traffic"
+    },
+    {
+      "keyword": "cheap dump truck insurance",
+      "volume": 170,
+      "cpc": 47.90,
+      "difficulty": "medium",
+      "competition": "MEDIUM",
+      "intent": "transactional",
+      "notes": "Price-conscious buyers; good for comparison landing page"
+    }
+  ],
+  "secondary_keywords": [
+    {
+      "keyword": "general liability insurance for junk removal",
+      "volume": 110,
+      "cpc": 101.53,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Highest CPC in dataset — very high buyer intent"
+    },
+    {
+      "keyword": "debris removal insurance",
+      "volume": 90,
+      "cpc": 26.88,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Core brand-match keyword for domain"
+    },
+    {
+      "keyword": "waste hauler insurance",
+      "volume": 50,
+      "cpc": 2.19,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Low CPC suggests low competition; good foothold keyword"
+    },
+    {
+      "keyword": "demolition contractor insurance",
+      "volume": 50,
+      "cpc": 66.62,
+      "difficulty": "medium",
+      "competition": "MEDIUM",
+      "intent": "commercial",
+      "notes": "Adjacent niche; strong CPC"
+    },
+    {
+      "keyword": "junk removal insurance cost",
+      "volume": 40,
+      "cpc": 23.33,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "informational",
+      "notes": "Blog/FAQ page target"
+    },
+    {
+      "keyword": "junk removal business insurance cost",
+      "volume": 40,
+      "cpc": 85.96,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "informational",
+      "notes": "Very high CPC despite low volume — prioritize"
+    },
+    {
+      "keyword": "roll off dumpster insurance",
+      "volume": 30,
+      "cpc": 111.39,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "commercial",
+      "notes": "Highest CPC in full dataset; niche but extremely valuable"
+    },
+    {
+      "keyword": "dumpster rental insurance",
+      "volume": 30,
+      "cpc": 20.65,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "commercial",
+      "notes": "Adjacent to core audience"
+    },
+    {
+      "keyword": "roll off truck insurance",
+      "volume": 20,
+      "cpc": 30.53,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "commercial",
+      "notes": "Specific vehicle type; good for commercial auto service page"
+    },
+    {
+      "keyword": "debris removal business insurance",
+      "volume": 10,
+      "cpc": null,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "commercial",
+      "notes": "Brand-aligned; low volume but zero competition expected"
+    },
+    {
+      "keyword": "demolition and debris removal insurance",
+      "volume": 10,
+      "cpc": null,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Combines two service types; good for service page targeting"
+    },
+    {
+      "keyword": "business insurance for junk removal",
+      "volume": 20,
+      "cpc": 99.54,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "High CPC; natural language variant"
+    },
+    {
+      "keyword": "junk removal general liability insurance",
+      "volume": 20,
+      "cpc": 66.97,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Service-specific GL page target"
+    }
+  ],
+  "long_tail": [
+    {
+      "keyword": "how much is insurance for a dump truck",
+      "volume": 210,
+      "cpc": 12.04,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "informational",
+      "notes": "FAQ/blog; question format good for featured snippet"
+    },
+    {
+      "keyword": "how much is dump truck insurance",
+      "volume": 210,
+      "cpc": 12.04,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "informational",
+      "notes": "Variant of above; target both"
+    },
+    {
+      "keyword": "dump truck insurance cost per month",
+      "volume": 70,
+      "cpc": 21.52,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "informational",
+      "notes": "Highly specific; good for pricing section or FAQ"
+    },
+    {
+      "keyword": "cheapest dump truck insurance",
+      "volume": 170,
+      "cpc": 47.90,
+      "difficulty": "medium",
+      "competition": "MEDIUM",
+      "intent": "transactional",
+      "notes": "Price-sensitive buyers; compare/quote page"
+    },
+    {
+      "keyword": "dump truck insurance carriers",
+      "volume": 50,
+      "cpc": 39.69,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Research stage; carrier comparison page"
+    },
+    {
+      "keyword": "dump truck insurance companies",
+      "volume": 50,
+      "cpc": 39.69,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Variant of above"
+    },
+    {
+      "keyword": "dump truck insurance near me",
+      "volume": 40,
+      "cpc": 35.94,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "transactional",
+      "notes": "Local intent; good for state-specific landing pages"
+    },
+    {
+      "keyword": "what insurance do i need for junk removal business",
+      "volume": 10,
+      "cpc": 27.20,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "informational",
+      "notes": "Perfect FAQ/guide question; featured snippet opportunity"
+    },
+    {
+      "keyword": "do you need insurance for junk removal",
+      "volume": 10,
+      "cpc": 17.74,
+      "difficulty": "low",
+      "competition": "MEDIUM",
+      "intent": "informational",
+      "notes": "Top-of-funnel awareness; blog post target"
+    },
+    {
+      "keyword": "insurance needed for junk removal business",
+      "volume": 10,
+      "cpc": 16.76,
+      "difficulty": "low",
+      "competition": "HIGH",
+      "intent": "informational",
+      "notes": "Buyer education stage; good for guide content"
+    },
+    {
+      "keyword": "commercial auto insurance for junk removal",
+      "volume": 10,
+      "cpc": 70.05,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "High CPC; service-specific commercial auto page"
+    },
+    {
+      "keyword": "junk removal commercial insurance",
+      "volume": 10,
+      "cpc": null,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Broad commercial coverage term"
+    },
+    {
+      "keyword": "average dump truck insurance cost per month",
+      "volume": 70,
+      "cpc": 29.07,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "informational",
+      "notes": "Pricing FAQ; featured snippet target"
+    },
+    {
+      "keyword": "progressive dump truck insurance",
+      "volume": 90,
+      "cpc": 32.90,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Competitor brand — good for comparison content"
+    },
+    {
+      "keyword": "best dump truck insurance",
+      "volume": 30,
+      "cpc": 27.12,
+      "difficulty": "low",
+      "competition": "LOW",
+      "intent": "commercial",
+      "notes": "Comparison/review content target"
+    }
+  ],
+  "paa_questions": [
+    "Do I need insurance for a debris removal business?",
+    "What type of insurance do junk removal companies need?",
+    "How much does dump truck insurance cost per month?",
+    "Does general liability cover debris removal contractors?",
+    "What is the difference between debris removal insurance and pollution liability?",
+    "Do storm debris cleanup crews need workers compensation?",
+    "Is commercial auto insurance required for dump trucks?",
+    "How much does junk removal business insurance cost?"
+  ]
+}
