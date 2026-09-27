@@ -14,13 +14,13 @@
     --bg-cream: #FBFAF6;
     --bg-sand: #ECE6DB;
     --bg-white: #FFFFFF;
-    --clay: #1F5673;
-    --clay-dark: #163F54;
+    --clay: #1F5A45;
+    --clay-dark: #174534;
     --sage: #C2772B;
     --gold: #E2A23D;
-    --espresso: #1B2530;
-    --cocoa: #38454F;
-    --mocha: #5A6873;
+    --espresso: #1F1A17;
+    --cocoa: #3F3A35;
+    --mocha: #6B625A;
     --adobe: #E0DACA;
     --radius: 1rem;
   }
@@ -49,7 +49,7 @@
   }
 
   ::selection {
-    background: rgba(31, 86, 115, 0.16);
+    background: rgba(31, 90, 69, 0.16);
     color: var(--espresso);
   }
 }
@@ -99,7 +99,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 6px;
-    background: linear-gradient(90deg, #1F5673 0%, #2E6E8E 24%, #C2772B 58%, #E2A23D 100%);
+    background: linear-gradient(90deg, #1F5A45 0%, #2E7558 24%, #C2772B 58%, #E2A23D 100%);
   }
   .pill { @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-heading font-semibold uppercase tracking-wider; }
   .pill-clay { @apply pill bg-clay/10 text-clay border border-clay/20; }
@@ -114,41 +114,41 @@
   .bg-sonoran {
     background-color: var(--bg-cream);
     background-image:
-      radial-gradient(circle at 15% 15%, rgba(31, 86, 115, 0.10) 0%, transparent 35%),
+      radial-gradient(circle at 15% 15%, rgba(31, 90, 69, 0.10) 0%, transparent 35%),
       radial-gradient(circle at 85% 75%, rgba(194, 119, 43, 0.07) 0%, transparent 40%);
   }
   .bg-sonoran-sand {
     background-color: var(--bg-sand);
     background-image:
-      radial-gradient(circle at 70% 20%, rgba(31, 86, 115, 0.07) 0%, transparent 45%),
+      radial-gradient(circle at 70% 20%, rgba(31, 90, 69, 0.07) 0%, transparent 45%),
       radial-gradient(circle at 20% 80%, rgba(226, 162, 61, 0.08) 0%, transparent 40%);
   }
   .bg-warm-radial {
     background:
-      radial-gradient(ellipse at top, rgba(31, 86, 115, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at top, rgba(31, 90, 69, 0.12) 0%, transparent 55%),
       radial-gradient(ellipse at bottom right, rgba(194, 119, 43, 0.07) 0%, transparent 50%),
       var(--bg-cream);
   }
   /* Hauler band — layered steel and amber horizon */
   .horizon-band {
     background: linear-gradient(180deg,
-      #1F5673 0% 18%, #2E6E8E 18% 34%, #E2A23D 34% 48%,
-      #C2772B 48% 62%, #163F54 62% 78%, #38454F 78% 100%);
+      #1F5A45 0% 18%, #2E7558 18% 34%, #E2A23D 34% 48%,
+      #C2772B 48% 62%, #174534 62% 78%, #3F3A35 78% 100%);
   }
   .grain {
     background-image:
-      repeating-linear-gradient(92deg, rgba(31,86,115,0.0) 0px, rgba(31,86,115,0.0) 10px, rgba(255,255,255,0.025) 10px, rgba(255,255,255,0.025) 11px),
+      repeating-linear-gradient(92deg, rgba(31,90,69,0.0) 0px, rgba(31,90,69,0.0) 10px, rgba(255,255,255,0.025) 10px, rgba(255,255,255,0.025) 11px),
       repeating-linear-gradient(88deg, rgba(0,0,0,0.0) 0px, rgba(0,0,0,0.0) 23px, rgba(0,0,0,0.03) 23px, rgba(0,0,0,0.03) 24px);
   }
   .dotted-warm {
-    background-image: radial-gradient(circle, rgba(31, 86, 115, 0.14) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(31, 90, 69, 0.14) 1px, transparent 1px);
     background-size: 24px 24px;
   }
   .arch-divider { position: relative; height: 3rem; width: 100%; }
   .arch-divider::after {
     content: ""; position: absolute; inset: 0; margin: auto;
     width: 10rem; height: 1.4rem;
-    background: linear-gradient(90deg, #1F5673 0% 18%, #2E6E8E 18% 40%, #E2A23D 40% 62%, #C2772B 62% 82%, #163F54 82% 100%);
+    background: linear-gradient(90deg, #1F5A45 0% 18%, #2E7558 18% 40%, #E2A23D 40% 62%, #C2772B 62% 82%, #174534 82% 100%);
     border-radius: 0.5rem; opacity: 0.92;
   }
 
@@ -161,7 +161,7 @@
   .prose-warm li::before {
     content: ""; position: absolute; left: 0; top: 0.55em;
     width: 1.1rem; height: 0.5rem;
-    background: linear-gradient(90deg, #1F5673 0% 35%, #E2A23D 35% 70%, #C2772B 70% 100%);
+    background: linear-gradient(90deg, #1F5A45 0% 35%, #E2A23D 35% 70%, #C2772B 70% 100%);
     border-radius: 0.15rem 0.5rem 0.15rem 0.5rem; opacity: 0.9;
   }
   .prose-warm strong { @apply text-espresso font-semibold; }
