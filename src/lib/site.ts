@@ -17,7 +17,7 @@ export const SITE = {
   founded: 2005,
   npn: "8608479",
   address: {
-    street: "12220 E Riggs Road, Suite #105",
+    street: "12220 E Riggs Rd, Suite #104",
     city: "Chandler",
     state: "AZ",
     zip: "85249",
@@ -157,10 +157,4 @@ export const STATS = [
   { value: 58, suffix: "M+", label: "Annual premium placed for contractors", prefix: "$" },
   { value: 50, suffix: "", label: "States licensed & writing", prefix: "" },
   { value: 20, suffix: "+", label: "Years insuring trade contractors", prefix: "" },
-] as const;
-
-export const TESTIMONIALS = [
-  { quote: "I was declined by three agents because my MC authority was only 60 days old. These folks placed a real dump truck program — $1M auto liability, physical damage, and the MCS-90 filing — at a number I could actually afford. No panic pricing, no voicemail runaround.", name: "Marcus T.", role: "Owner-Operator", location: "Dallas–Fort Worth, TX" },
-  { quote: "A roll-off box got hit in a customer's driveway and the third-party damage claim was on me. My old carrier tried to deny it. The roll-off and inland marine program these folks built covered the container and the liability. They actually understand what we do.", name: "Renee D.", role: "Roll-Off Contractor", location: "Tampa, FL" },
-  { quote: "After Hurricane cleanup work, our standard hauling policy wouldn't have covered half of what we hauled. They added the pollution and storm-debris endorsements and got our limits to where the FEMA contract required. Specialty markets you can't find with a generic agent.", name: "Dwayne P.", role: "Storm Debris Contractor", location: "Houston, TX" },
 ] as const;

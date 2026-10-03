@@ -60,11 +60,6 @@ export const COPY = {
   process: {
     lead: "No two-week back-and-forth. A real conversation, real specialty markets, and a program you can actually understand — built around your trucks, your crew, and your hauling.",
   },
-  testimonials: {
-    eyebrow: "From debris contractors",
-    h2Lead: "Haulers that found",
-    h2Highlight: "coverage that actually pays",
-  },
   finalCta: {
     h2Lead: "Protect Your Hauling Operation",
     h2Highlight: "with coverage built for the truck.",
