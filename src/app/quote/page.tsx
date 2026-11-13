@@ -22,6 +22,7 @@ export default function QuotePage() {
   const [formData, setFormData] = useState({
     name: "", businessName: "", email: "", phone: "", state: "", serviceType: "", yearsInBusiness: "", message: "", "bot-field": "",
     street_address: "", city: "", zip: "", prior_year_gross_sales: "", prior_year_subcontractor_expenses: "", prior_year_employee_count: "", prior_year_employee_payroll: "", estimated_gross_sales: "", estimated_subcontractor_expenses: "", estimated_employee_count: "", estimated_employee_payroll: "", estimated_material_costs: "", subcontractors_have_insurance: "", percent_subcontractors_insured: "", coverage_for_uninsured_subcontractors: "", coverage_types: "", annual_gross_sales: "", year_business_started: "", business_description: "", class_code_1: "", class_code_2: "", class_code_3: "", class_code_4: "", class_code_5: "", residential_vs_commercial: "", new_vs_existing_construction: "", largest_projects: "", prior_carrier_name: "", prior_policy_number: "", prior_policy_expiration: "",
+    entityType: "", fein: "", statesOfOperation: "", usesSubcontractors: "", partTimeEmployees: "", currentlyInsured: "", currentLimits: "", lossesLast3Years: "", lossCount: "", lossDescription: "", desiredEffectiveDate: "", additionalInsuredNeeded: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -218,6 +219,10 @@ export default function QuotePage() {
             <label className="inline-flex items-center gap-2 mr-4 mb-1"><input type="checkbox" name="coverage_types" value="Umbrella / excess" onChange={(e) => { const cur = (formData.coverage_types || "").split(", ").filter(Boolean); const next = e.target.checked ? [...cur, e.target.value] : cur.filter((v) => v !== e.target.value); setFormData({ ...formData, coverage_types: next.join(", ") }); }} /><span className="text-sm">Umbrella / excess</span></label>
             <label className="inline-flex items-center gap-2 mr-4 mb-1"><input type="checkbox" name="coverage_types" value="Pollution liability" onChange={(e) => { const cur = (formData.coverage_types || "").split(", ").filter(Boolean); const next = e.target.checked ? [...cur, e.target.value] : cur.filter((v) => v !== e.target.value); setFormData({ ...formData, coverage_types: next.join(", ") }); }} /><span className="text-sm">Pollution liability</span></label>
             <label className="inline-flex items-center gap-2 mr-4 mb-1"><input type="checkbox" name="coverage_types" value="Professional liability" onChange={(e) => { const cur = (formData.coverage_types || "").split(", ").filter(Boolean); const next = e.target.checked ? [...cur, e.target.value] : cur.filter((v) => v !== e.target.value); setFormData({ ...formData, coverage_types: next.join(", ") }); }} /><span className="text-sm">Professional liability</span></label>
+            <label className="inline-flex items-center gap-2 mr-4 mb-1"><input type="checkbox" name="coverage_types" value="Tools & equipment / inland marine" onChange={(e) => { const cur = (formData.coverage_types || "").split(", ").filter(Boolean); const next = e.target.checked ? [...cur, e.target.value] : cur.filter((v) => v !== e.target.value); setFormData({ ...formData, coverage_types: next.join(", ") }); }} /><span className="text-sm">Tools & equipment / inland marine</span></label>
+            <label className="inline-flex items-center gap-2 mr-4 mb-1"><input type="checkbox" name="coverage_types" value="Builders risk" onChange={(e) => { const cur = (formData.coverage_types || "").split(", ").filter(Boolean); const next = e.target.checked ? [...cur, e.target.value] : cur.filter((v) => v !== e.target.value); setFormData({ ...formData, coverage_types: next.join(", ") }); }} /><span className="text-sm">Builders risk</span></label>
+            <label className="inline-flex items-center gap-2 mr-4 mb-1"><input type="checkbox" name="coverage_types" value="Bonds" onChange={(e) => { const cur = (formData.coverage_types || "").split(", ").filter(Boolean); const next = e.target.checked ? [...cur, e.target.value] : cur.filter((v) => v !== e.target.value); setFormData({ ...formData, coverage_types: next.join(", ") }); }} /><span className="text-sm">Bonds</span></label>
+            <label className="inline-flex items-center gap-2 mr-4 mb-1"><input type="checkbox" name="coverage_types" value="Other" onChange={(e) => { const cur = (formData.coverage_types || "").split(", ").filter(Boolean); const next = e.target.checked ? [...cur, e.target.value] : cur.filter((v) => v !== e.target.value); setFormData({ ...formData, coverage_types: next.join(", ") }); }} /><span className="text-sm">Other</span></label>
           </div>
         </div>
         <div>
@@ -275,6 +280,80 @@ export default function QuotePage() {
         <div>
           <label className="block text-sm font-bold mb-1.5">Prior policy expiration date</label>
           <input type="date" name="prior_policy_expiration" value={formData.prior_policy_expiration} onChange={(e) => setFormData({ ...formData, prior_policy_expiration: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+
+        {/* ACORD 125/126 core gap-fill — 2026-11-13 audit */}
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Entity type</label>
+          <select name="entityType" value={formData.entityType} onChange={(e) => setFormData({ ...formData, entityType: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg">
+            <option value="">Select...</option>
+            <option value="Individual / Sole proprietor">Individual / Sole proprietor</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Corporation">Corporation</option>
+            <option value="LLC">LLC</option>
+            <option value="Joint venture">Joint venture</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Federal EIN</label>
+          <input type="text" name="fein" value={formData.fein} onChange={(e) => setFormData({ ...formData, fein: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">States of operation</label>
+          <input type="text" name="statesOfOperation" value={formData.statesOfOperation} onChange={(e) => setFormData({ ...formData, statesOfOperation: e.target.value })} placeholder="e.g. AZ, NV, CA" className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Do you use subcontractors?</label>
+          <select name="usesSubcontractors" value={formData.usesSubcontractors} onChange={(e) => setFormData({ ...formData, usesSubcontractors: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg">
+            <option value="">Select...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Part-time employee count</label>
+          <input type="number" name="partTimeEmployees" value={formData.partTimeEmployees} onChange={(e) => setFormData({ ...formData, partTimeEmployees: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Currently insured?</label>
+          <select name="currentlyInsured" value={formData.currentlyInsured} onChange={(e) => setFormData({ ...formData, currentlyInsured: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg">
+            <option value="">Select...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Current policy limits</label>
+          <input type="text" name="currentLimits" value={formData.currentLimits} onChange={(e) => setFormData({ ...formData, currentLimits: e.target.value })} placeholder="e.g. $1M/$2M" className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Any losses/claims in the last 3 years?</label>
+          <select name="lossesLast3Years" value={formData.lossesLast3Years} onChange={(e) => setFormData({ ...formData, lossesLast3Years: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg">
+            <option value="">Select...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Number of losses/claims</label>
+          <input type="number" name="lossCount" value={formData.lossCount} onChange={(e) => setFormData({ ...formData, lossCount: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Loss description</label>
+          <textarea name="lossDescription" rows={3} value={formData.lossDescription} onChange={(e) => setFormData({ ...formData, lossDescription: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Desired effective date</label>
+          <input type="date" name="desiredEffectiveDate" value={formData.desiredEffectiveDate} onChange={(e) => setFormData({ ...formData, desiredEffectiveDate: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
+        </div>
+        <div>
+          <label className="block text-sm font-bold mb-1.5">Additional insured needed?</label>
+          <select name="additionalInsuredNeeded" value={formData.additionalInsuredNeeded} onChange={(e) => setFormData({ ...formData, additionalInsuredNeeded: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg">
+            <option value="">Select...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
         </div>
 </form>
                   </FadeIn>
