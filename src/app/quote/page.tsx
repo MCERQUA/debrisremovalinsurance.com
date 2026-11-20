@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { FadeIn } from "@/components/animations/FadeIn";
+import AcordFields from "@/components/AcordFields";
 import { SITE } from "@/lib/site";
 import { US_STATES, QUOTE_SERVICE_TYPES, YEARS_OPTIONS, COPY } from "@/lib/content";
 import { CheckCircle2, ShieldCheck, ArrowRight, Phone, Clock, Zap, MapPin } from "lucide-react";
@@ -21,7 +22,7 @@ const trustItems = [
 export default function QuotePage() {
   const [formData, setFormData] = useState({
     name: "", businessName: "", email: "", phone: "", state: "", serviceType: "", yearsInBusiness: "", message: "", "bot-field": "",
-    street_address: "", city: "", zip: "", prior_year_gross_sales: "", prior_year_subcontractor_expenses: "", prior_year_employee_count: "", prior_year_employee_payroll: "", estimated_gross_sales: "", estimated_subcontractor_expenses: "", estimated_employee_count: "", estimated_employee_payroll: "", estimated_material_costs: "", subcontractors_have_insurance: "", percent_subcontractors_insured: "", coverage_for_uninsured_subcontractors: "", coverage_types: "", annual_gross_sales: "", year_business_started: "", business_description: "", class_code_1: "", class_code_2: "", class_code_3: "", class_code_4: "", class_code_5: "", residential_vs_commercial: "", new_vs_existing_construction: "", largest_projects: "", prior_carrier_name: "", prior_policy_number: "", prior_policy_expiration: "",
+    street_address: "", city: "", zip: "", prior_year_gross_sales: "", prior_year_subcontractor_expenses: "", prior_year_employee_count: "", prior_year_employee_payroll: "", estimated_gross_sales: "", estimated_subcontractor_expenses: "", estimated_employee_count: "", estimated_employee_payroll: "", estimated_material_costs: "", subcontractors_have_insurance: "", percent_subcontractors_insured: "", coverage_for_uninsured_subcontractors: "", coverage_types: "", annual_gross_sales: "", year_business_started: "", business_description: "", class_code_1: "", class_code_2: "", class_code_3: "", class_code_4: "", class_code_5: "", residential_vs_commercial: "", new_vs_existing_construction: "", largest_projects: "", prior_carrier_name: "", prior_policy_expiration: "",
     entityType: "", fein: "", statesOfOperation: "", usesSubcontractors: "", partTimeEmployees: "", currentlyInsured: "", currentLimits: "", lossesLast3Years: "", lossCount: "", lossDescription: "", desiredEffectiveDate: "", additionalInsuredNeeded: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -38,9 +39,21 @@ export default function QuotePage() {
     setSubmitting(true);
     setError("");
     try {
-      const res = await fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form_name: "quote", source: SITE.domain, ...formData }) });
-      // fetch() resolves on a 4xx/5xx, so the status is what says the lead was taken.
-      if (!res.ok) throw new Error(String(res.status));
+      // Uncontrolled ACORD intake fields live in the DOM; controlled state wins on any name clash.
+      const extra: Record<string, string> = {};
+      new FormData(e.currentTarget).forEach((v, k) => { if (typeof v === "string" && v !== "" && !(k in extra)) extra[k] = v; });
+      const payload: Record<string, string> = { ...extra, ...formData };
+      let ok = false;
+      try {
+        const res = await fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form_name: "quote", source: SITE.domain, ...payload }) });
+        // fetch() resolves on a 4xx/5xx, so the status is what says the lead was taken.
+        ok = res.ok;
+      } catch { ok = false; }
+      if (!ok) {
+        // Webhook failed: fall back to Netlify Forms (form-name registered in public/__forms.html).
+        const fb = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ "form-name": "quote", ...payload }).toString() });
+        if (!fb.ok) throw new Error(String(fb.status));
+      }
       setSubmitted(true);
     } catch {
       setError(COPY.quote.errorMessage);
@@ -274,10 +287,6 @@ export default function QuotePage() {
           <input type="text" name="prior_carrier_name" value={formData.prior_carrier_name} onChange={(e) => setFormData({ ...formData, prior_carrier_name: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
         </div>
         <div>
-          <label className="block text-sm font-bold mb-1.5">Prior policy number</label>
-          <input type="text" name="prior_policy_number" value={formData.prior_policy_number} onChange={(e) => setFormData({ ...formData, prior_policy_number: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
-        </div>
-        <div>
           <label className="block text-sm font-bold mb-1.5">Prior policy expiration date</label>
           <input type="date" name="prior_policy_expiration" value={formData.prior_policy_expiration} onChange={(e) => setFormData({ ...formData, prior_policy_expiration: e.target.value })} className="w-full px-4 py-2.5 border rounded-lg" />
         </div>
@@ -292,6 +301,9 @@ export default function QuotePage() {
             <option value="Corporation">Corporation</option>
             <option value="LLC">LLC</option>
             <option value="Joint venture">Joint venture</option>
+            <option value="S Corporation">S Corporation</option>
+            <option value="Trust">Trust</option>
+            <option value="Not for profit">Not for profit</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -355,6 +367,7 @@ export default function QuotePage() {
             <option value="No">No</option>
           </select>
         </div>
+        <AcordFields />
 </form>
                   </FadeIn>
                 )}
