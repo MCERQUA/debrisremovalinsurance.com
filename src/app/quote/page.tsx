@@ -47,11 +47,11 @@ export default function QuotePage() {
       try {
         const res = await fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form_name: "quote", source: SITE.domain, ...payload }) });
         // The webhook answers 200 with stored:false when it did not store the lead.
-        if (res.ok) { const j = await res.json().catch(() => null); ok = !j || j.stored !== false; }
+        if (res.ok) { const j = await res.json().catch(() => null); ok = !!(j && j.ok === true && j.stored !== false); }
       } catch { ok = false; }
       if (!ok) {
         // Webhook failed: fall back to Netlify Forms (form-name registered in public/__forms.html).
-        const fb = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ "form-name": "quote", ...payload }).toString() });
+        const fb = await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ "form-name": "quote", ...payload }).toString() });
         if (!fb.ok) throw new Error(String(fb.status));
       }
       setSubmitted(true);
