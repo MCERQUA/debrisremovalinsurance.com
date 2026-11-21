@@ -46,8 +46,8 @@ export default function QuotePage() {
       let ok = false;
       try {
         const res = await fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ form_name: "quote", source: SITE.domain, ...payload }) });
-        // fetch() resolves on a 4xx/5xx, so the status is what says the lead was taken.
-        ok = res.ok;
+        // The webhook answers 200 with stored:false when it did not store the lead.
+        if (res.ok) { const j = await res.json().catch(() => null); ok = !j || j.stored !== false; }
       } catch { ok = false; }
       if (!ok) {
         // Webhook failed: fall back to Netlify Forms (form-name registered in public/__forms.html).
